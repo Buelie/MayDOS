@@ -1,0 +1,18 @@
+{
+  "latest":{
+    "default":"0.2",
+    "beta":null
+  },
+  "download":{
+    "code":true,
+    "default":{
+      "0.2":{
+        "update":"",
+        "url",""
+      }
+    },
+    "beta":{
+      "code":false
+    }
+  }
+}
