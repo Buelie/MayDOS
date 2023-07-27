@@ -8,7 +8,7 @@
     "default":{
       "0.2":{
         "update":"",
-        "url",""
+        "url":"https://github.com/Buelie/MayDOS/releases/download/MayDOS-0.2/MayDOS.zip"
       }
     },
     "beta":{
