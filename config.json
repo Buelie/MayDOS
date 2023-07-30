@@ -1,12 +1,16 @@
 {
   "latest":{
-    "default":"0.2",
+    "default":"0.0.2",
     "beta":null
   },
   "download":{
     "code":true,
     "default":{
-      "0.2":{
+      "0.0.2":{
+        "update":"",
+        "url":"https://github.com/Buelie/MayDOS/releases/download/MayDOS-0.0.2/MayDOS.zip"
+      },
+      "0.0.1":{
         "update":"",
         "url":"https://github.com/Buelie/MayDOS/releases/download/MayDOS-0.2/MayDOS.zip"
       }
