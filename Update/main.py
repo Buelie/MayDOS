@@ -24,7 +24,7 @@ progressbarOne['value'] = 0
 progressbarOne['length'] = 200
 show()
 
-with open("cg.txt",'r') as f:
+with open("cg.txt",'r',encoding = 'utf-8') as f:
     path = f.read()
 
 os.remove(path+'MayDOS0.1_System.py')
