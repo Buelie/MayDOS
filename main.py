@@ -56,10 +56,14 @@ def show():
         root.update()
         time.sleep(0.01)
     Update = json.loads(requests.get("https://buelie.github.io/MayDOS/config.json").text)
-    code = "0.0.3"
+    code = "0.0.4"
     if Update["latest"]["default"] != code:
-        Y_N_U = tkinter.messagebox.askyesno(title='更新提示',message=f'有可用更新，是否下载?\n当前版本:{code} -> {Update["latest"]["default"]}\n在important/download文件夹内可以找到自动更新下载的系统文件')
+        Y_N_U = tkinter.messagebox.askyesno(title='更新提示',message=f'有可用更新，是否下载?\n当前版本:{code} -> {Update["latest"]["default"]}\n稍等一下，马上就好')
         if Y_N_U == True:
+            if os.path.isfile('important/download/main.py'):
+                os.remove("important/download/main.py")
+            else:
+                pass
             wget.download("https://buelie.github.io/MayDOS/Update/main.py","important/download")
             cmd_0 = r'start "important/download/main.py"'
             os.system(cmd_0)
