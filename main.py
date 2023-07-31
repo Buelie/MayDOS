@@ -41,7 +41,7 @@ if os.path.isdir('important/log') == False:
 if os.path.isdir('important/download') == False:
     os.makedirs('important/download')
 if os.path.isfile('important/download/cg.txt') == False:
-    path_url = os.getcwd()
+    path_url = os.getcwd() + "\\"
     with open('important/download/cg.txt','w') as f:
         f.write(path_url)
         f.close()
