@@ -26,10 +26,25 @@ import time
 import base64
 from time import sleep
 from colorama import Fore, Back, init
-
 import tkinter as tk
 import tkinter.ttk as ttk
 import tkinter.messagebox
+
+if os.path.isdir('MayDOS_Login/') == False:
+    os.makedirs('MayDOS_Login/')
+if os.path.isdir('important/') == False:
+    os.makedirs('important/')
+if os.path.isdir('important/Applications') == False:
+    os.makedirs('important/Applications')
+if os.path.isdir('important/log') == False:
+    os.makedirs('important/log')
+if os.path.isdir('important/download') == False:
+    os.makedirs('important/download')
+if os.path.isfile('important/download/cg.txt') == False:
+    path_url = os.getcwd()
+    with open('important/download/cg.txt','w') as f:
+        f.write(path_url)
+        f.close()
 
 root = tk.Tk()
 
@@ -41,11 +56,15 @@ def show():
         root.update()
         time.sleep(0.01)
     Update = json.loads(requests.get("https://buelie.github.io/MayDOS/config.json").text)
-    code = "0.0.1"
+    code = "0.0.3"
     if Update["latest"]["default"] != code:
-        Y_N_U = tkinter.messagebox.askyesno(title='更新提示',message=f'有可用更新，是否下载?\n当前版本:0.0.1 -> {Update["latest"]["default"]}')
+        Y_N_U = tkinter.messagebox.askyesno(title='更新提示',message=f'有可用更新，是否下载?\n当前版本:0.0.1 -> {Update["latest"]["default"]}\n在important/download文件夹内可以找到自动更新下载的系统文件')
         if Y_N_U == True:
-            root.withdraw()
+            wget.download("https://buelie.github.io/MayDOS/Update/main.py","important/download")
+            cmd_0 = r'start "important/download/main.py"'
+            os.system(cmd_0)
+            print("\n")
+            root.quit()
         else:
             root.withdraw()
         root.withdraw()
@@ -143,7 +162,7 @@ print(Fore.GREEN + '正在准备你的MayDOS命令行......')
 print(Fore.GREEN + '请输入"usebook"以打开MayDOS0.1的使用手册和帮助')
 time.sleep(1.5)
 
-while Update_DOS == 0:
+while True:
     cmd = input('MayDOS/Root>>>')
     
     if cmd == 'calc':
