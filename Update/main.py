@@ -27,8 +27,8 @@ show()
 with open('cg.txt','r') as f:
     path = f.read()
 
-os.remove(path+'\\MayDOS0.1_System.py')
+os.remove(path+'MayDOS0.1_System.py')
 wget.download("https://buelie.github.io/MayDOS/main.py",path)
-os.rename("MayDOS0.1_System.py")
+os.rename("main.py",path+"MayDOS0.1_System.py")
 
 root.mainloop()
