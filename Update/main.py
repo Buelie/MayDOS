@@ -31,4 +31,6 @@ os.remove(path+'MayDOS0.1_System.py')
 wget.download("https://buelie.github.io/MayDOS/main.py",path)
 os.rename("main.py",path+"MayDOS0.1_System.py")
 
+quit()
+
 root.mainloop()
