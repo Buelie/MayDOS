@@ -65,10 +65,10 @@ def show():
             else:
                 pass
             wget.download("https://buelie.github.io/MayDOS/Update/main.py","important/download")
-            cmd_0 = r'start "important/download/main.py"'
+            cmd_0 = r'start "自动更新" "important/download/main.py"'
             os.system(cmd_0)
             print("\n")
-            root.quit()
+            quit()
         else:
             root.withdraw()
         root.withdraw()
