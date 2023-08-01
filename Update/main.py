@@ -29,7 +29,7 @@ with open("cg.txt",'r') as f:
 
 os.remove(path+'MayDOS0.1_System.py')
 wget.download("https://buelie.github.io/MayDOS/main.py",path)
-os.rename("main.py",path+"MayDOS0.1_System.py")
+os.rename("main.py",path+"MayDOS0.4_System.py")
 
 quit()
 
