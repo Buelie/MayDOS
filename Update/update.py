@@ -24,20 +24,14 @@ progressbarOne['value'] = 0
 progressbarOne['length'] = 200
 show()
 
-with open("cg.txt",'r') as f:
-    path = f.read()
+f = open("path.txt",'r')
+path = f.read()
     
-if os.path.isdir(path+'MayDOS0.4_System.py') == False:
-    os.remove(path+'MayDOS0.4_System.py')
-if os.path.isdir(path+'MayDOS0.3_System.py') == True:
-    os.remove(path+'MayDOS0.3_System.py')
-if os.path.isdir(path+'MayDOS0.2_System.py') == True:
-    os.remove(path+'MayDOS0.2_System.py')
-if os.path.isdir(path+'MayDOS0.1_System.py') == True:
-    os.remove(path+'MayDOS0.1_System.py')
+if os.path.isdir(path+'MayDOS_System.py') == True:
+    os.remove(path+'MayDOS_System.py')
 
 wget.download("https://buelie.github.io/MayDOS/main.py",path)
-os.rename("main.py",path+"MayDOS0.4_System.py")
+os.rename("main.py","MayDOS_System.py")
 
 quit()
 
