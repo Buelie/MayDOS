@@ -27,8 +27,8 @@ show()
 f = open("path.txt",'r')
 path = f.read()
     
-if os.path.isdir(path+'MayDOS_System.py') == True:
-    os.remove(path+'MayDOS_System.py')
+if os.path.isdir('MayDOS_System.py') == True:
+    os.remove('MayDOS_System.py')
 
 wget.download("https://buelie.github.io/MayDOS/main.py",path)
 os.rename("main.py","MayDOS_System.py")
