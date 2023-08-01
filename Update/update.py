@@ -1,5 +1,5 @@
 import wget
-import os,sys
+import os
 import time
 
 import tkinter as tk
@@ -24,14 +24,11 @@ progressbarOne['value'] = 0
 progressbarOne['length'] = 200
 show()
 
-f = open("path.txt",'r')
-path = f.read()
-    
-if os.path.isdir('MayDOS_System.py') == True:
+if os.path.isfile('MayDOS_System.py') == True:
     os.remove('MayDOS_System.py')
 
-wget.download("https://buelie.github.io/MayDOS/main.py",path)
-os.rename("main.py","MayDOS_System.py")
+wget.download("https://buelie.github.io/MayDOS/main.py","")
+os.rename(f'{os.getcwd()}\\main.py','MayDOS_System.py')
 
 quit()
 
