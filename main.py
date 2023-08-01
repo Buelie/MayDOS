@@ -56,7 +56,7 @@ def show():
         root.update()
         time.sleep(0.01)
     Update = json.loads(requests.get("https://buelie.github.io/MayDOS/config.json").text)
-    code = "0.0.3"
+    code = "0.4.0"
     if Update["latest"]["default"] != code:
         Y_N_U = tkinter.messagebox.askyesno(title='更新提示',message=f'有可用更新，是否下载?\n当前版本:{code} -> {Update["latest"]["default"]}\n稍等一下，马上就好，在important/download/找到更新程序并运行即可')
         if Y_N_U == True:
